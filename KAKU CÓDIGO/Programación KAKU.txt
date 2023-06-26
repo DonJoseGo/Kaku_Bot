@@ -1,0 +1,328 @@
+Blockly.Blocks['iniciar'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Iniciar")
+        .appendField(new Blockly.FieldImage("./imag/iniciar.png", 20, 20, { alt: "*", flipRtl: "FALSE" }));
+    this.setNextStatement(true, null);
+    this.setColour(120);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Lua['iniciar'] = function(block) {
+  // TODO: Assemble Lua into code variable.
+    var code = '';
+    code+= 'dofile("hcsr04.lc")\n';
+    code+= 'ultrasonido = HCSR04(6,7,2,1)\n';
+    code+= 'ws2812.init(ws2812.MODE_SINGLE)\n';
+
+    code+= 'leftA = 1\n';
+    code+= 'leftB = 2\n';
+    code+= 'rightA = 3\n';
+    code+= 'rightB = 5\n';
+    code+= 'buzzer = 0\n';
+    code+= 'brazo = 8\n';
+
+    code+= 'gpio.mode(leftA, gpio.OUTPUT)\n';
+    code+= 'gpio.mode(leftB, gpio.OUTPUT)\n';
+    code+= 'gpio.mode(rightA, gpio.OUTPUT)\n';
+    code+= 'gpio.mode(rightB, gpio.OUTPUT)\n';
+    code+= 'gpio.mode(buzzer, gpio.OUTPUT)\n';
+    code+= 'gpio.write(buzzer,0)\n';
+    code+= 'gpio.mode(brazo, gpio.OUTPUT)\n';
+    code+= 'pwm.setup(brazo,123,81+80)\n';
+    code+= 'pwm.start(brazo)\n';
+
+    code+= 'function detenerse(tiempo)\n';
+    code+= 'tmr.delay((tiempo*1000000)+1)\n';
+    code+= 'gpio.write(leftA, 0)\n';
+    code+= 'gpio.write(leftB, 0)\n';
+    code+= 'gpio.write(rightA, 0)\n';
+    code+= 'gpio.write(rightB, 0)\n';
+    code+= 'end\n';
+    code+= 'detenerse(0)\n';
+
+    code+= 'function avanzar(tiempo)\n';
+    code+= 'gpio.write(leftA, 1)\n';
+    code+= 'gpio.write(leftB, 0)\n';
+    code+= 'gpio.write(rightA, 1)\n';
+    code+= 'gpio.write(rightB, 0)\n';
+    code+= 'detenerse(tiempo)\n';
+    code+= 'end\n';
+
+    code+= 'function girar_derecha(tiempo)\n';
+    code+= 'gpio.write(leftA, 1)\n';
+    code+= 'gpio.write(leftB, 0)\n';
+    code+= 'gpio.write(rightA, 0)\n';
+    code+= 'gpio.write(rightB, 1)\n';
+    code+= 'detenerse(tiempo)\n';
+    code+= 'end\n';
+
+    code+= 'function girar_izquierda(tiempo)\n';
+    code+= 'gpio.write(leftA, 0)\n';
+    code+= 'gpio.write(leftB, 1)\n';
+    code+= 'gpio.write(rightA, 1)\n';
+    code+= 'gpio.write(rightB, 0)\n';
+    code+= 'detenerse(tiempo)\n';
+    code+= 'end\n';
+
+    code+= 'function retroceder(tiempo)\n';
+    code+= 'gpio.write(leftA, 0)\n';
+    code+= 'gpio.write(leftB, 1)\n';
+    code+= 'gpio.write(rightA, 0)\n';
+    code+= 'gpio.write(rightB, 1)\n';
+    code+= 'detenerse(tiempo)\n';
+    code+= 'end\n';
+  return code;
+};
+
+Blockly.Blocks['rotar_izquierda'] = {
+  init: function() {
+    this.appendValueInput("tiempo")
+        .setCheck("Number")
+        .appendField("Rotar a la izquierda")
+        .appendField(new Blockly.FieldImage("./imag/girar_izquierda.png", 20, 20, { alt: "*", flipRtl: "FALSE" }))
+        .appendField("por");
+    this.appendDummyInput()
+        .appendField("segundos");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(240);
+ this.setTooltip("Este bloque permite que el vehículo gire hacia la izquierda");
+ this.setHelpUrl("");
+  }
+};
+Blockly.Lua['rotar_izquierda'] = function(block) {
+  var value_tiempo = Blockly.Lua.valueToCode(block, 'tiempo', Blockly.Lua.ORDER_ATOMIC);
+  // TODO: Assemble Lua into code variable.
+  var code = 'girar_izquierda('+value_tiempo+')\n';
+  return code;
+};
+
+Blockly.Blocks['rotar_derecha'] = {
+  init: function() {
+    this.appendValueInput("tiempo")
+        .setCheck("Number")
+        .appendField("Rotar a la derecha")
+        .appendField(new Blockly.FieldImage("./imag/girar_derecha.png", 20, 20, { alt: "*", flipRtl: "FALSE" }))
+        .appendField("por");
+    this.appendDummyInput()
+        .appendField("segundos");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(240);
+ this.setTooltip("Este bloque permite que el vehículo gire hacia la derecha");
+ this.setHelpUrl("");
+  }
+};
+Blockly.Lua['rotar_derecha'] = function(block) {
+  var value_tiempo = Blockly.Lua.valueToCode(block, 'tiempo', Blockly.Lua.ORDER_ATOMIC);
+  // TODO: Assemble Lua into code variable.
+  var code = 'girar_derecha('+value_tiempo+')\n';
+  return code;
+};
+
+Blockly.Blocks['adelante'] = {
+  init: function() {
+    this.appendValueInput("tiempo")
+        .setCheck("Number")
+        .appendField("Avanzar")
+        .appendField(new Blockly.FieldImage("./imag/adelante.png", 20, 20, { alt: "*", flipRtl: "FALSE" }))
+        .appendField("por");
+    this.appendDummyInput()
+        .appendField("segundos");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(240);
+ this.setTooltip("Este bloque permite que el vehiculo pueda avanzar");
+ this.setHelpUrl("");
+  }
+};
+Blockly.Lua['adelante'] = function(block) {
+  var value_tiempo = Blockly.Lua.valueToCode(block, 'tiempo', Blockly.Lua.ORDER_ATOMIC);
+  // TODO: Assemble Lua into code variable.
+  var code = 'avanzar('+value_tiempo+')\n';
+  return code;
+};
+
+Blockly.Blocks['retroceder'] = {
+  init: function() {
+    this.appendValueInput("tiempo")
+        .setCheck("Number")
+        .appendField("Retroceder")
+        .appendField(new Blockly.FieldImage("./imag/retroceder.png", 20, 20, { alt: "*", flipRtl: "FALSE" }))
+        .appendField("por");
+    this.appendDummyInput()
+        .appendField("segundos");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(240);
+ this.setTooltip("Este bloque permite que el vehículo se dirija hacia atrás");
+ this.setHelpUrl("");
+  }
+};
+Blockly.Lua['retroceder'] = function(block) {
+  var value_tiempo = Blockly.Lua.valueToCode(block, 'tiempo', Blockly.Lua.ORDER_ATOMIC);
+  // TODO: Assemble Lua into code variable.
+  var code = 'retroceder('+value_tiempo+')\n';
+  return code;
+};
+
+Blockly.Blocks['detener'] = {
+  init: function() {
+    this.appendValueInput("tiempo")
+        .setCheck("Number")
+        .appendField("Detener")
+        .appendField(new Blockly.FieldImage("./imag/detener.png", 20, 20, { alt: "*", flipRtl: "FALSE" }))
+        .appendField("por");
+    this.appendDummyInput()
+        .appendField("segundos");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(240);
+ this.setTooltip("Este bloque permite detener el vehículo por un determinado tiempo");
+ this.setHelpUrl("");
+  }
+};
+Blockly.Lua['detener'] = function(block) {
+  var value_tiempo = Blockly.Lua.valueToCode(block, 'tiempo', Blockly.Lua.ORDER_ATOMIC);
+  // TODO: Assemble Lua into code variable.
+  var code = 'detenerse('+value_tiempo+')\n';
+  return code;
+};
+
+Blockly.Blocks['ultrasonido'] = {
+  init: function() {
+    this.appendValueInput("numero")
+        .setCheck("Number")
+        .appendField("si hay obstaculo")
+        .appendField(new Blockly.FieldImage("./imag/obstaculo.png", 20, 20, { alt: "*", flipRtl: "FALSE" }))
+        .appendField("a");
+    this.appendDummyInput()
+        .appendField("centimetros");
+    this.appendStatementInput("NAME")
+        .setCheck(null)
+        .appendField("haga");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(120);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+Blockly.Lua['ultrasonido'] = function(block) {
+  var value_numero = Blockly.Lua.valueToCode(block, 'numero', Blockly.Lua.ORDER_ATOMIC);
+  var statements_name = Blockly.Lua.statementToCode(block, 'NAME');
+  // TODO: Assemble Lua into code variable.
+  var code = 'ultrasonido.measure()\n'; 
+	code += 'if ultrasonido.distance*100 <= ' + value_numero + ' and ultrasonido.distance*100 > 0 then\n';
+	code += statements_name;
+	code += 'end\n';
+  return code;
+};
+
+Blockly.Blocks['encender_led'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Encender led")
+        .appendField(new Blockly.FieldImage("./imag/led.png", 20, 20, { alt: "*", flipRtl: "FALSE" }))
+        .appendField("en color")
+        .appendField(new Blockly.FieldDropdown([["Azul","Azul"], ["Rojo","Rojo"], ["Verde","Verde"], ["Naranja","Naranja"], ["Amarillo","Amarillo"], ["Morado","Morado"], ["Blanco","Blanco"], ["Rosado","Rosado"]]), "color");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(60);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+Blockly.Lua['encender_led'] = function(block) {
+  var dropdown_color = block.getFieldValue('color');
+  // TODO: Assemble Lua into code variable.
+  var code = "leds = ''\n";
+  if(dropdown_color == "Azul") {
+	code += "led = string.char(0,0,255)\n";
+  }
+  else if (dropdown_color == "Rojo") {
+  	code += "led = string.char(0,255,0)\n";
+  }
+  else if (dropdown_color == "Verde"){
+  	code += "led = string.char(255,0,0)\n";
+  }
+  else if (dropdown_color == "Naranja"){
+  	code += "led = string.char(102,255,0)\n";
+  }
+  else if (dropdown_color == "Amarillo"){
+  	code += "led = string.char(255,255,0)\n";
+  }
+  else if (dropdown_color == "Morado"){
+  	code += "led = string.char(35,87,100)\n";
+  }
+  else if (dropdown_color == "Blanco"){
+  	code += "led = string.char(255,255,255)\n";
+  }
+  else if (dropdown_color == "Rosado"){
+  	code += "led = string.char(0,255,128)\n";
+  }
+  code += 'leds = leds..led\n'
+  code += 'ws2812.write(leds)\n'
+  return code;
+};
+
+Blockly.Blocks['alarma'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("encender bocina")
+        .appendField(new Blockly.FieldImage("./imag/bocina.png", 20, 20, { alt: "*", flipRtl: "FALSE" }));
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(30);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+Blockly.Lua['alarma'] = function(block) {
+  // TODO: Assemble Lua into code variable.
+  var code = 'gpio.write(buzzer,1)\n';
+	code+= 'tmr.delay(1*1000000)\n';
+	code+= 'gpio.write(buzzer,0)\n';
+  return code;
+};
+
+Blockly.Blocks['brazo_derecha'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Mover brazo a la derecha")
+        .appendField(new Blockly.FieldImage("./imag/brazo_derecha.png", 20, 20, { alt: "*", flipRtl: "FALSE" }));
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(315);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+Blockly.Lua['brazo_derecha'] = function(block) {
+  // TODO: Assemble Lua into code variable.
+	var code = 'pwm.setduty(brazo,81+40)\n';
+  code += 'tmr.delay(1*1000000)\n';
+  return code;
+};
+
+Blockly.Blocks['brazo_izquierda'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Mover brazo a la izquierda")
+        .appendField(new Blockly.FieldImage("./imag/brazo_izquierda.png", 20, 20, { alt: "*", flipRtl: "FALSE" }));
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(315);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+Blockly.Lua['brazo_izquierda'] = function(block) {
+  // TODO: Assemble Lua into code variable.
+	var code = 'pwm.setduty(brazo,81+120)\n';
+  code += 'tmr.delay(1*1000000)\n';
+  return code;
+};
