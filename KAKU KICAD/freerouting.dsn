@@ -1,0 +1,239 @@
+(pcb C:\Users\josem\Desktop\KITCAD\KAKU\freerouting.dsn
+  (parser
+    (string_quote ")
+    (space_in_quoted_tokens on)
+    (host_cad "KiCad's Pcbnew")
+    (host_version "7.0.1")
+  )
+  (resolution um 10)
+  (unit um)
+  (structure
+    (layer F.Cu
+      (type signal)
+      (property
+        (index 0)
+      )
+    )
+    (layer B.Cu
+      (type signal)
+      (property
+        (index 1)
+      )
+    )
+    (boundary
+      (path pcb 0  83260 -51050  56110 -51050  56110 -14626.7  83260 -14626.7
+            83260 -51050)
+    )
+    (via "Via[0-1]_800:400_um")
+    (rule
+      (width 250)
+      (clearance 200.1)
+      (clearance 200.1 (type default_smd))
+      (clearance 50 (type smd_smd))
+    )
+  )
+  (placement
+    (component "Package_DIP:DIP-16_W7.62mm"
+      (place U1 74535.000000 -17644.200000 front 0.000000 (PN L293D))
+    )
+    (component "MH-CD42:MH-CD42"
+      (place "MH-CD1" 56360.000000 -41119.200000 front 0.000000 (PN ~))
+    )
+    (component "ENTRADA 2PIN:2P"
+      (place CARGA1 73660.000000 -50800.000000 front 0.000000 (PN ~))
+      (place BATERIA1 73660.000000 -43759.600000 front 0.000000 (PN ~))
+    )
+  )
+  (library
+    (image "Package_DIP:DIP-16_W7.62mm"
+      (outline (path signal 120  6460 1330  4810 1330))
+      (outline (path signal 120  1160 1330  1160 -19110))
+      (outline (path signal 120  6460 -19110  6460 1330))
+      (outline (path signal 120  1160 -19110  6460 -19110))
+      (outline (path signal 120  2810 1330  1160 1330))
+      (outline (path signal 0  4852.43 1372.43  4870 1330  4851.95 1135.23  4798.42 947.084
+            4711.23 771.982  4593.35 615.883  4448.79 484.102  4282.48 381.127
+            4100.08 310.465  3907.8 274.522  3712.2 274.522  3519.92 310.465
+            3337.52 381.127  3171.21 484.102  3026.65 615.883  2908.77 771.982
+            2821.58 947.084  2768.05 1135.23  2750 1330  2767.57 1372.43
+            2810 1390  2852.43 1372.43  2870 1330  2888.06 1146.62  2941.55 970.278
+            3028.42 807.764  3145.32 665.32  3287.76 548.419  3450.28 461.553
+            3626.61 408.062  3810 390  3993.39 408.062  4169.72 461.553
+            4332.24 548.419  4474.68 665.32  4591.58 807.764  4678.45 970.278
+            4731.94 1146.62  4750 1330  4767.57 1372.43  4810 1390))
+      (outline (path signal 50  8700 1550  -1100 1550))
+      (outline (path signal 50  -1100 1550  -1100 -19300))
+      (outline (path signal 50  8700 -19300  8700 1550))
+      (outline (path signal 50  -1100 -19300  8700 -19300))
+      (outline (path signal 100  635 270  1635 1270))
+      (outline (path signal 100  6985 -19050  635 -19050))
+      (outline (path signal 100  1635 1270  6985 1270))
+      (outline (path signal 100  6985 1270  6985 -19050))
+      (outline (path signal 100  635 -19050  635 270))
+      (pin Rect[A]Pad_1600x1600_um 1 0 0)
+      (pin Oval[A]Pad_1600x1600_um 2 0 -2540)
+      (pin Oval[A]Pad_1600x1600_um 3 0 -5080)
+      (pin Oval[A]Pad_1600x1600_um 4 0 -7620)
+      (pin Oval[A]Pad_1600x1600_um 5 0 -10160)
+      (pin Oval[A]Pad_1600x1600_um 6 0 -12700)
+      (pin Oval[A]Pad_1600x1600_um 7 0 -15240)
+      (pin Oval[A]Pad_1600x1600_um 8 0 -17780)
+      (pin Oval[A]Pad_1600x1600_um 9 7620 -17780)
+      (pin Oval[A]Pad_1600x1600_um 10 7620 -15240)
+      (pin Oval[A]Pad_1600x1600_um 11 7620 -12700)
+      (pin Oval[A]Pad_1600x1600_um 12 7620 -10160)
+      (pin Oval[A]Pad_1600x1600_um 13 7620 -7620)
+      (pin Oval[A]Pad_1600x1600_um 14 7620 -5080)
+      (pin Oval[A]Pad_1600x1600_um 15 7620 -2540)
+      (pin Oval[A]Pad_1600x1600_um 16 7620 0)
+    )
+    (image "MH-CD42:MH-CD42"
+      (outline (path signal 100  0 25000  16000 25000))
+      (outline (path signal 100  0 0  0 25000))
+      (outline (path signal 100  0 0  16000 0))
+      (outline (path signal 100  15494 24384  15748 24384))
+      (outline (path signal 100  15748 24384  15748 24892))
+      (outline (path signal 100  16000 25000  16000 0))
+      (pin RoundRect[A]Pad_2286x1524_382.45_um_0.000000_0 (rotate 90) 1 1778 2540)
+      (pin RoundRect[A]Pad_2286x1524_382.45_um_0.000000_0 (rotate 90) 2 4318 2540)
+      (pin RoundRect[A]Pad_2286x1524_382.45_um_0.000000_0 (rotate 90) 3 6858 2540)
+      (pin RoundRect[A]Pad_2286x1524_382.45_um_0.000000_0 (rotate 90) 4 9398 2540)
+      (pin RoundRect[A]Pad_2286x1524_382.45_um_0.000000_0 (rotate 90) 5 11938 2540)
+      (pin RoundRect[A]Pad_2286x1524_382.45_um_0.000000_0 (rotate 90) 6 14478 2540)
+    )
+    (image "ENTRADA 2PIN:2P"
+      (outline (path signal 100  6725.94 2875.26  6706.56 2542.64  6648.71 2214.52  6553.15 1895.33
+            6421.18 1589.39  6254.59 1300.84  6055.62 1033.59  5826.98 791.236
+            5571.74 577.068  5293.37 393.98  4995.62 244.446  4682.53 130.49
+            4358.33 53.652  4027.39 14.971  3694.21 14.971  3363.27 53.652
+            3039.07 130.49  2725.98 244.446  2428.23 393.98  2149.86 577.068
+            1894.62 791.236  1665.98 1033.59  1467.01 1300.84  1300.42 1589.39
+            1168.45 1895.33  1072.89 2214.52  1015.03 2542.64  995.662 2875.26
+            1015.03 3207.88  1072.89 3536.01  1168.45 3855.2  1300.42 4161.13
+            1467.01 4449.68  1665.98 4716.94  1894.62 4959.29  2149.86 5173.46
+            2428.23 5356.54  2725.98 5506.08  3039.07 5620.03  3363.27 5696.87
+            3694.21 5735.55  4027.39 5735.55  4358.33 5696.87  4682.53 5620.03
+            4995.62 5506.08  5293.37 5356.54  5571.74 5173.46  5826.98 4959.29
+            6055.62 4716.94  6254.59 4449.68  6421.18 4161.13  6553.15 3855.2
+            6648.71 3536.01  6706.56 3207.88  6725.94 2875.26))
+      (pin RoundRect[A]Pad_2286x1524_382.45_um_0.000000_0 1 2540 2540)
+      (pin RoundRect[A]Pad_2286x1524_382.45_um_0.000000_0 2 5080 2540)
+    )
+    (padstack Oval[A]Pad_1600x1600_um
+      (shape (path F.Cu 1600  0 0  0 0))
+      (shape (path B.Cu 1600  0 0  0 0))
+      (attach off)
+    )
+    (padstack RoundRect[A]Pad_2286x1524_382.45_um_0.000000_0
+      (shape (polygon F.Cu 0  -1144.45 381  -1128.55 490.127  -1073.26 603.233  -984.233 692.256
+            -871.127 747.551  -762 763.45  762 763.45  871.127 747.551  984.233 692.256
+            1073.26 603.233  1128.55 490.127  1144.45 381  1144.45 -381
+            1128.55 -490.127  1073.26 -603.233  984.233 -692.256  871.127 -747.551
+            762 -763.45  -762 -763.45  -871.127 -747.551  -984.233 -692.256
+            -1073.26 -603.233  -1128.55 -490.127  -1144.45 -381  -1144.45 381))
+      (shape (polygon B.Cu 0  -1144.45 381  -1128.55 490.127  -1073.26 603.233  -984.233 692.256
+            -871.127 747.551  -762 763.45  762 763.45  871.127 747.551  984.233 692.256
+            1073.26 603.233  1128.55 490.127  1144.45 381  1144.45 -381
+            1128.55 -490.127  1073.26 -603.233  984.233 -692.256  871.127 -747.551
+            762 -763.45  -762 -763.45  -871.127 -747.551  -984.233 -692.256
+            -1073.26 -603.233  -1128.55 -490.127  -1144.45 -381  -1144.45 381))
+      (attach off)
+    )
+    (padstack Rect[A]Pad_1600x1600_um
+      (shape (rect F.Cu -800 -800 800 800))
+      (shape (rect B.Cu -800 -800 800 800))
+      (attach off)
+    )
+    (padstack "Via[0-1]_800:400_um"
+      (shape (circle F.Cu 800))
+      (shape (circle B.Cu 800))
+      (attach off)
+    )
+  )
+  (network
+    (net "unconnected-(MH-CD1-VIN-Pad6)"
+      (pins "MH-CD1"-6)
+    )
+    (net "unconnected-(U1-EN1,2-Pad1)"
+      (pins U1-1)
+    )
+    (net "unconnected-(U1-1A-Pad2)"
+      (pins U1-2)
+    )
+    (net "unconnected-(U1-1Y-Pad3)"
+      (pins U1-3)
+    )
+    (net "unconnected-(U1-2Y-Pad6)"
+      (pins U1-6)
+    )
+    (net "unconnected-(U1-2A-Pad7)"
+      (pins U1-7)
+    )
+    (net "unconnected-(U1-VCC2-Pad8)"
+      (pins U1-8)
+    )
+    (net "unconnected-(U1-EN3,4-Pad9)"
+      (pins U1-9)
+    )
+    (net "unconnected-(U1-3A-Pad10)"
+      (pins U1-10)
+    )
+    (net "unconnected-(U1-3Y-Pad11)"
+      (pins U1-11)
+    )
+    (net "unconnected-(U1-4Y-Pad14)"
+      (pins U1-14)
+    )
+    (net "unconnected-(U1-4A-Pad15)"
+      (pins U1-15)
+    )
+    (net "unconnected-(U1-VCC1-Pad16)"
+      (pins U1-16)
+    )
+    (net "unconnected-(MH-CD1-BAT-Pad3)"
+      (pins "MH-CD1"-3)
+    )
+    (net "unconnected-(MH-CD1-GND-Pad5)"
+      (pins "MH-CD1"-5)
+    )
+    (net "unconnected-(U1-GND-Pad4)"
+      (pins U1-4)
+    )
+    (net "unconnected-(U1-GND-Pad5)"
+      (pins U1-5)
+    )
+    (net "unconnected-(U1-GND-Pad12)"
+      (pins U1-12)
+    )
+    (net "unconnected-(U1-GND-Pad13)"
+      (pins U1-13)
+    )
+    (net "unconnected-(MH-CD1-GND-Pad4)"
+      (pins "MH-CD1"-4)
+    )
+    (net "unconnected-(MH-CD1-out-5v-Pad1)"
+      (pins "MH-CD1"-1)
+    )
+    (net "unconnected-(MH-CD1-GND-Pad2)"
+      (pins "MH-CD1"-2)
+    )
+    (class kicad_default "" "unconnected-(MH-CD1-BAT-Pad3)" "unconnected-(MH-CD1-GND-Pad2)"
+      "unconnected-(MH-CD1-GND-Pad4)" "unconnected-(MH-CD1-GND-Pad5)" "unconnected-(MH-CD1-VIN-Pad6)"
+      "unconnected-(MH-CD1-out-5v-Pad1)" "unconnected-(U1-1A-Pad2)" "unconnected-(U1-1Y-Pad3)"
+      "unconnected-(U1-2A-Pad7)" "unconnected-(U1-2Y-Pad6)" "unconnected-(U1-3A-Pad10)"
+      "unconnected-(U1-3Y-Pad11)" "unconnected-(U1-4A-Pad15)" "unconnected-(U1-4Y-Pad14)"
+      "unconnected-(U1-EN1,2-Pad1)" "unconnected-(U1-EN3,4-Pad9)" "unconnected-(U1-GND-Pad12)"
+      "unconnected-(U1-GND-Pad13)" "unconnected-(U1-GND-Pad4)" "unconnected-(U1-GND-Pad5)"
+      "unconnected-(U1-VCC1-Pad16)" "unconnected-(U1-VCC2-Pad8)"
+      (circuit
+        (use_via Via[0-1]_800:400_um)
+      )
+      (rule
+        (width 250)
+        (clearance 200.1)
+      )
+    )
+  )
+  (wiring
+  )
+)
