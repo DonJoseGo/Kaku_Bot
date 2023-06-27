@@ -1,6 +1,6 @@
 # Kaku_Bot
 Robot con movimiento autónomo y un brazo de movimiento repetitivo
-![KAKU ROBOT](https://github.com/DonJoseGo/Kaku_Bot/assets/133617253/b884335e-d6be-4865-9f0d-c7efd6364e25)
+![KAKU ROBOT (1)](https://github.com/DonJoseGo/Kaku_Bot/assets/133617253/1999c4d5-5b70-4be3-87db-040cfbee8dd7)
 
 # Integrantes
 * Jose Gómez
