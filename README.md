@@ -19,7 +19,7 @@ El robot tiene un costo economico y puede ser replicado fácilmente con ayuda de
 # Resultados
 El robot tiene buen movimiento gracias a los 5 voltios que recibe de la tarjeta. Adicional a ellos se mueve en todas las direcciones y es programable muy fácilmente con ayuda de la aplicación Catalejo. En el siguiente video se puede observar el movimiento que realiza el robot y los bloques de código usados de forma muy sencilla.
 
-https://github.com/DonJoseGo/Kaku_Bot/assets/133617253/09d224d3-c605-4a09-91fd-d447b4df5ff1
+https://github.com/DonJoseGo/Kaku_Bot/assets/133617253/09d224d3-c605-4a09-91fd-d447b4df5ff1.
 
 En el siguiente video podemos ver como el robot avanza (no uniformemente como ya habíamos dicho) y se detiene al detectar el obtaculo cercano, al final el robot se cae pero esto es debido al peso de la Power band que lleva en su cabeza.
 
