@@ -23,3 +23,4 @@ https://github.com/DonJoseGo/Kaku_Bot/assets/133617253/81911118-b9c0-4a47-818a-c
 
 En el siguiente video podemos ver como el robot avanza (no uniformemente como ya habíamos dicho) y se detiene al detectar el obtaculo cercano, al final el robot se cae pero esto es debido al peso de la Power band que lleva en su cabeza.
 
+https://github.com/DonJoseGo/Kaku_Bot/assets/133617253/b0575f9b-56e6-4335-94fb-eddb37d2c51a
